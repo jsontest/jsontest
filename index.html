@@ -1,52 +1,42 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
+
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>JSON Test by jsontest</title>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="JSON Test : Simple testing for JSON-based applications" />
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="javascripts/scale.fix.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>JSON Test</title>
   </head>
+
   <body>
-    <div class="wrapper">
-      <header>
-        <h1 class="header">JSON Test</h1>
-        <p class="header">JSONTest.com - Simple testing for JSON-based applications</p>
 
-        <ul>
-          <li class="download"><a class="buttons" href="https://github.com/jsontest/jsontest/zipball/master">Download ZIP</a></li>
-          <li class="download"><a class="buttons" href="https://github.com/jsontest/jsontest/tarball/master">Download TAR</a></li>
-          <li><a class="buttons github" href="https://github.com/jsontest/jsontest">View On GitHub</a></li>
-        </ul>
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/jsontest/jsontest">View on GitHub</a>
 
-        <p class="header">This project is maintained by <a class="header name" href="https://github.com/jsontest">jsontest</a></p>
+          <h1 id="project_title">JSON Test</h1>
+          <h2 id="project_tagline">Simple testing for JSON-based applications</h2>
 
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/jsontest/jsontest/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/jsontest/jsontest/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
 
-      </header>
-      <section>
-        <p>JSONTest.com
-testing for JSON applications</p>
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p>JSONTest.com is a testing platform for services utilizing JavaScript Object Notation (JSON). To use, make a request to <strong>servicename</strong>.jsontest.com, where <strong>servicename</strong> is the name of a service listed below. We also support a number of parameters, such as <strong>callback</strong>, allowing you to test Javascript and other web applications. For example, try this: <a href="http://ip.jsontest.com/?callback=showMyIP">http://ip.jsontest.com/?callback=showMyIP</a></p>
 
-<p><a href="#mime">mime</a>
-JSONP Callbacks
-We support JSONP callbacks <code>?callback=myJavascriptFunction</code> for loading data into Javascript applications. Try it: <a href="http://ip.jsontest.com/?callback=myJavascriptFunction">http://ip.jsontest.com/?callback=myJavascriptFunction</a></p>
-
-<p>Standards-Compliant
-We use the org.json reference parser to generate spec-compliant JSON. MIME types follow IETF and IANA official recommendations.</p>
-
-<p>Flexible
-Want to change the MIME type? Want to receive malformed JSON? That's not a problem. We support a number of interesting and useful tools.</p>
-
-<p>Fast
-JSONTest is hosted on Google App Engine to ensure high availability and speed. </p>
-
-<p>JSONTest.com is a testing platform for services utilizing JavaScript Object Notation (JSON). To use, make a request to <strong>servicename</strong>.jsontest.com, where <strong>servicename</strong> is the name of a service listed below. We also support a number of parameters, such as <strong>callback</strong>, allowing you to test Javascript and other web applications. </p>
+<p>Services
+<a href="#ip">IP Address</a>
+<a href="#headers">HTTP Headers</a>
+<a href="#date">Date &amp; Time</a></p>
 
 <h2>Services</h2>
 
@@ -231,11 +221,17 @@ JSONTest is hosted on Google App Engine to ensure high availability and speed. <
 
 <p>It is recommended that you use the <strong>servicename</strong>.jsontest.com URL syntax while accessing JSONTest.com services. However, if you wish to specify the service required using a parameter, you may do so. Simply append `?service=**[servicename]** to any JSONTest endpoint. For instance, calling <a href="http://date.jsontest.com/?service=ip">http://date.jsontest.com/?service=ip</a> will return your IP address.</p>
       </section>
-      <footer>
-        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">JSON Test maintained by <a href="https://github.com/jsontest">jsontest</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
       </footer>
     </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-		
+
+    
+
   </body>
 </html>
