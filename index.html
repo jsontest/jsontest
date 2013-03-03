@@ -1,0 +1,241 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>JSON Test by jsontest</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">JSON Test</h1>
+        <p class="header">JSONTest.com - Simple testing for JSON-based applications</p>
+
+        <ul>
+          <li class="download"><a class="buttons" href="https://github.com/jsontest/jsontest/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/jsontest/jsontest/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/jsontest/jsontest">View On GitHub</a></li>
+        </ul>
+
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/jsontest">jsontest</a></p>
+
+
+      </header>
+      <section>
+        <p>JSONTest.com
+testing for JSON applications</p>
+
+<p><a href="#mime">mime</a>
+JSONP Callbacks
+We support JSONP callbacks <code>?callback=myJavascriptFunction</code> for loading data into Javascript applications. Try it: <a href="http://ip.jsontest.com/?callback=myJavascriptFunction">http://ip.jsontest.com/?callback=myJavascriptFunction</a></p>
+
+<p>Standards-Compliant
+We use the org.json reference parser to generate spec-compliant JSON. MIME types follow IETF and IANA official recommendations.</p>
+
+<p>Flexible
+Want to change the MIME type? Want to receive malformed JSON? That's not a problem. We support a number of interesting and useful tools.</p>
+
+<p>Fast
+JSONTest is hosted on Google App Engine to ensure high availability and speed. </p>
+
+<p>JSONTest.com is a testing platform for services utilizing JavaScript Object Notation (JSON). To use, make a request to <strong>servicename</strong>.jsontest.com, where <strong>servicename</strong> is the name of a service listed below. We also support a number of parameters, such as <strong>callback</strong>, allowing you to test Javascript and other web applications. </p>
+
+<h2>Services</h2>
+
+<h3>
+<a></a> IP Address</h3>
+
+<p>Calling <a href="http://ip.jsontest.com/">http://ip.jsontest.com/</a> will return your IP address in JSON form. Example:</p>
+
+<div class="highlight"><pre><span class="p">{</span><span class="nt">"ip"</span><span class="p">:</span> <span class="s2">"8.8.8.8"</span><span class="p">}</span>
+</pre></div>
+
+<p>Endpoint: <a href="http://ip.jsontest.com/">http://ip.jsontest.com/</a></p>
+
+<h3>
+<a></a> Headers</h3>
+
+<p>Returns the HTTP request headers received from the client.</p>
+
+<div class="highlight"><pre><span class="p">{</span>
+   <span class="nt">"Accept-Language"</span><span class="p">:</span> <span class="s2">"en-US,en;q=0.8"</span><span class="p">,</span>
+   <span class="nt">"Host"</span><span class="p">:</span> <span class="s2">"headers.jsontest.com"</span><span class="p">,</span>
+   <span class="nt">"Accept-Charset"</span><span class="p">:</span> <span class="s2">"ISO-8859-1,utf-8;q=0.7,*;q=0.3"</span><span class="p">,</span>
+   <span class="nt">"Accept"</span><span class="p">:</span> <span class="s2">"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>Endpoint: <a href="http://headers.jsontest.com/">http://headers.jsontest.com/</a></p>
+
+<h3>
+<a></a> Date &amp; Time</h3>
+
+<p>Returns a JSON object with the current date and time in human-readable form, and the current number of milliseconds since UNIX epoch (this is equivalent to the Javascript call <code>(new Date()).getTime()</code> ).</p>
+
+<p>Date and time are expressed using the GMT time zone. </p>
+
+<div class="highlight"><pre><span class="p">{</span>
+   <span class="nt">"time"</span><span class="p">:</span> <span class="s2">"03:53:25 AM"</span><span class="p">,</span>
+   <span class="nt">"milliseconds_since_epoch"</span><span class="p">:</span> <span class="mi">1362196405309</span><span class="p">,</span>
+   <span class="nt">"date"</span><span class="p">:</span> <span class="s2">"03-02-2013"</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>Endpoint: <a href="http://date.jsontest.com">http://date.jsontest.com</a> (or <a href="http://time.jsontest.com">http://time.jsontest.com</a> )</p>
+
+<h3>
+<a></a> Echo JSON</h3>
+
+<p>Returns a customized JSON object that you can define through a REST-style URL. For example, calling <a href="http://echo.jsontest.com/key/value/one/two">http://echo.jsontest.com/key/value/one/two</a> will return the following JSON:</p>
+
+<div class="highlight"><pre><span class="p">{</span>
+   <span class="nt">"one"</span><span class="p">:</span> <span class="s2">"two"</span><span class="p">,</span>
+   <span class="nt">"key"</span><span class="p">:</span> <span class="s2">"value"</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>Endpoint: <a href="http://echo.jsontest.com/insert-key-here/insert-value-here/key/value">http://echo.jsontest.com/insert-key-here/insert-value-here/key/value</a></p>
+
+<h3>
+<a></a> Validation</h3>
+
+<p>Validates a given JSON object against the org.json reference parser. To use, tack a JSON string to a <strong>json</strong> parameter, as in: <a href="http://validate.jsontest.com/?json=%7B%22key%22:%22value%22%7D">http://validate.jsontest.com/?json={"key":"value"}</a>; this returns the following JSON:</p>
+
+<div class="highlight"><pre><span class="p">{</span>
+   <span class="nt">"object_or_array"</span><span class="p">:</span> <span class="s2">"object"</span><span class="p">,</span>
+   <span class="nt">"empty"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+   <span class="nt">"parse_time_nanoseconds"</span><span class="p">:</span> <span class="mi">19608</span><span class="p">,</span>
+   <span class="nt">"validate"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+   <span class="nt">"size"</span><span class="p">:</span> <span class="mi">1</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>If the JSON object was parsed successfully, the <strong>validate</strong> parameter will be set to true. The <strong>size</strong> parameter counts the number of top level keys inside the JSON object. <strong>Empty</strong> is true if the JSON object has no key:value pairs, false if there is at least 1 pair. <strong>Parse_time_nanoseconds</strong> counts how long the org.json parser took to parse the JSON text.</p>
+
+<p>If invalid JSON is passed in, the <strong>validate</strong> parameter will be false, and an explanation of why parsing failed will be added. The explanation is taken directly from the org.json parser Exception message. As an example, suppose we tried to validate <strong>{"key":"value"</strong> (this JSON is incorrect because it misses the closing <strong>}</strong> brace). We can validate by going to <a href="http://validate.jsontest.com/?json=%7B%22key%22:%22value%22">http://validate.jsontest.com/?json={"key":"value"</a> . Here's the result:</p>
+
+<div class="highlight"><pre><span class="p">{</span>
+   <span class="nt">"error"</span><span class="p">:</span> <span class="s2">"Expected a ',' or '}' at 15 [character 16 line 1]"</span><span class="p">,</span>
+   <span class="nt">"object_or_array"</span><span class="p">:</span> <span class="s2">"object"</span><span class="p">,</span>
+   <span class="nt">"error_info"</span><span class="p">:</span> <span class="s2">"This error came from the org.json reference parser."</span><span class="p">,</span>
+   <span class="nt">"validate"</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>Note: GET requests are supported, though not recommended while using this service. You should use POST requests if possible. </p>
+
+<p>Top-level JSON arrays can also be passed in; if so, the <strong>object_or_array</strong> parameter will be set to true, and the <strong>size parameter</strong> counts the number of elements within the array. For instance, parsing the array <strong>[1,2,3]</strong> will return the following JSON: </p>
+
+<div class="highlight"><pre><span class="p">{</span>
+   <span class="nt">"object_or_array"</span><span class="p">:</span> <span class="s2">"array"</span><span class="p">,</span>
+   <span class="nt">"empty"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+   <span class="nt">"parse_time_nanoseconds"</span><span class="p">:</span> <span class="mi">127664</span><span class="p">,</span>
+   <span class="nt">"validate"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+   <span class="nt">"size"</span><span class="p">:</span> <span class="mi">3</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>Endpoint: <a href="http://validate.jsontest.com/?json=%5BJSON-code-to-validate%5D">http://validate.jsontest.com/?json=[JSON-code-to-validate]</a></p>
+
+<h3>
+<a></a> Arbitrary JS Code</h3>
+
+<p>JSONP is not just JSON; it is a JSON object wrapped inside a Javascript function call. However, JSONP is not just limited to function calls; you may embed any Javascript code needed.</p>
+
+<p>This service sends back JS code to create two alerts(), one that shows your IP address, and one that shows the current time in milliseconds. An example is below:</p>
+
+<div class="highlight"><pre><span class="nx">Arbitrary</span> <span class="nx">JS</span> <span class="nx">code</span> <span class="nx">here</span>
+</pre></div>
+
+<p>If you specify a callback string, it will be included in a third alert prompt.</p>
+
+<div class="highlight"><pre><span class="nx">Arbitrary</span> <span class="nx">JS</span> <span class="nx">code</span> <span class="nx">here</span>
+<span class="nx">JSONP</span> <span class="kd">function</span> <span class="nx">call</span> <span class="p">(</span><span class="nx">at</span> <span class="nx">end</span><span class="p">)</span> <span class="kd">with</span> <span class="nx">ip</span> <span class="nx">and</span> <span class="nx">user</span> <span class="nx">agent</span> <span class="nx">info</span><span class="p">.</span>
+</pre></div>
+
+<p>Endpoint: <a href="http://code.jsontest.com">http://code.jsontest.com</a></p>
+
+<h3>
+<a></a> Cookie</h3>
+
+<p>Sets a cookie with a name of <strong>jsontestdotcom</strong>, containing a value of the current time in milliseconds. The server will then return the following JSON:</p>
+
+<div class="highlight"><pre><span class="err">json</span> <span class="err">code</span> <span class="err">for</span> <span class="err">returned</span> <span class="err">cookie</span>
+</pre></div>
+
+<p>The Set-Cookie header will look similar to this:</p>
+
+<pre lang="header"><code>Set-Cookie: put header info here
+</code></pre>
+
+<p>Endpoint: <a href="http://cookie.jsontest.com/">http://cookie.jsontest.com/</a></p>
+
+<h3>
+<a></a> Malformed JSON</h3>
+
+<p>Returns damaged/malformed JSON to the client. The returned JSON object will display your client IP address, but will be missing the final <strong>}</strong> brace - making it invalid JSON.</p>
+
+<div class="highlight"><pre><span class="err">example</span> <span class="err">of</span> <span class="err">malformed</span> <span class="err">JSON</span>
+</pre></div>
+
+<p>Endpoint: <a href="http://malformed.jsontest.com/">http://malformed.jsontest.com/</a></p>
+
+<h2>
+<a></a> Optional Parameters</h2>
+
+<p>The parameters below work on all of the above services. </p>
+
+<h3>
+<a></a> Callbacks</h3>
+
+<p>For JSONP applications to work, they need to be able to specify a callback parameter. You can specify a callback parameter by appending <strong>?callback=[function_name]</strong>, where <strong>[function_name]</strong> represents the Javascript function name to send the JSON object to.</p>
+
+<p>For example, calling <a href="http://ip.jsontest.com/?callback=showIP">http://ip.jsontest.com/?callback=showIP</a> will return this response:</p>
+
+<div class="highlight"><pre><span class="nx">showIP</span><span class="p">({</span><span class="s2">"ip"</span><span class="o">:</span> <span class="s2">"208.97.218.10"</span><span class="p">});</span>
+</pre></div>
+
+<h3>
+<a></a> Access-Control-Allow-Origin Header</h3>
+
+<p>Most web applications run in a sandbox, preventing them from accessing content from different web sites. Servers that host content and APIs available to external applications must specify which apps are allowed by setting the Access-Control-Allow-Origin header. </p>
+
+<p>By default, JSONTest.com sets this header to <code>*</code>, meaning that any web application regardless of its origin url (such as localhost) can communicate with the server. You can turn this header off by adding the parameter <strong>?alloworigin=false</strong> to any service listed above. It is NOT recommended that you use this functionality; this should only be used for testing your application's ability to gracefully degrade. </p>
+
+<p>More information can be found at <a href="http://www.w3.org/TR/cors/">W3C Cross-Origin Resource Sharing</a> and <a href="https://developer.mozilla.org/en-US/docs/HTTP_access_control">Mozilla: HTTP Access Control</a>.</p>
+
+<h3>
+<a></a> MIME Type</h3>
+
+<p>JSONTest.com follows IETF and IANA recommendations for the MIME type of JSON content: JSON content is set to "application/json" and JSONP content is declared as "application/javascript". See <a href="http://www.iana.org/assignments/media-types/application/index.html">IANA Media Types</a>, <a href="http://www.ietf.org/rfc/rfc4627.txt">IETF RFC 4627 (JSON Specification)</a>, and <a href="http://www.rfc-editor.org/rfc/rfc4329.txt">IETF RFC 4329 (Scripting Media Types)</a> for further documentation.</p>
+
+<p>However, you may want to set other media types for your application. For any service listed above, you may change its media type by setting the parameter <strong>?mime=[mime-int]</strong>, where <strong>[mime-int]</strong> is a number from the list below:</p>
+
+<ol>
+<li>application/json</li>
+<li>application/javascript</li>
+<li>text/javascript</li>
+<li>text/html</li>
+<li>text/plain</li>
+</ol><p>For instance, calling <a href="http://ip.jsontest.com/?mime=5">http://ip.jsontest.com/?mime=5</a> would return your IP address within a JSON object with a MIME type of text/plain.</p>
+
+<h3>Services</h3>
+
+<p>It is recommended that you use the <strong>servicename</strong>.jsontest.com URL syntax while accessing JSONTest.com services. However, if you wish to specify the service required using a parameter, you may do so. Simply append `?service=**[servicename]** to any JSONTest endpoint. For instance, calling <a href="http://date.jsontest.com/?service=ip">http://date.jsontest.com/?service=ip</a> will return your IP address.</p>
+      </section>
+      <footer>
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		
+  </body>
+</html>
