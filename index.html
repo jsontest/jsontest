@@ -33,11 +33,20 @@
         <p>JSONTest.com is a testing platform for services utilizing JavaScript Object Notation (JSON). To use, make a request to <strong>servicename</strong>.jsontest.com, where <strong>servicename</strong> is the name of a service listed below. We also support a number of parameters, such as <strong>callback</strong>, allowing you to test Javascript and other web applications. For example, try this: <a href="http://ip.jsontest.com/?callback=showMyIP">http://ip.jsontest.com/?callback=showMyIP</a></p>
 
 <p>Services
-<a href="#ip">IP Address</a>
-<a href="#headers">HTTP Headers</a>
-<a href="#date">Date &amp; Time</a>
-<a href="#echo">Echo JSON</a>
-<a href="#validate">Validate</a></p>
+1. <a href="#ip">IP Address</a>
+2. <a href="#headers">HTTP Headers</a>
+3. <a href="#date">Date &amp; Time</a>
+4. <a href="#echo">Echo JSON</a>
+5. <a href="#validate">Validate</a>
+6. <a href="#code">Arbitrary JS Code</a>
+7. <a href="#cookie">Cookie</a>
+8. <a href="#malformed">Malformed JSON</a>
+9. <a href="#md5">MD5</a></p>
+
+<p>Parameters
+1. <a href="#callback">Callback</a>
+2. <a href="#alloworigin">Allow Origin</a>
+3. <a href="#mime">MIME</a></p>
 
 <h2>Services</h2>
 
@@ -159,13 +168,8 @@
 
 <p>Sets a cookie with a name of <strong>jsontestdotcom</strong>, containing a value of the current time in milliseconds. The server will then return the following JSON:</p>
 
-<div class="highlight"><pre><span class="err">json</span> <span class="err">code</span> <span class="err">for</span> <span class="err">returned</span> <span class="err">cookie</span>
+<div class="highlight"><pre><span class="p">{</span><span class="nt">"cookie_status"</span><span class="p">:</span> <span class="s2">"Cookie set with name jsontestdotcom"</span><span class="p">}</span>
 </pre></div>
-
-<p>The Set-Cookie header will look similar to this:</p>
-
-<pre lang="header"><code>Set-Cookie: put header info here
-</code></pre>
 
 <p>Endpoint: <a href="http://cookie.jsontest.com/">http://cookie.jsontest.com/</a></p>
 
@@ -178,6 +182,19 @@
 </pre></div>
 
 <p>Endpoint: <a href="http://malformed.jsontest.com/">http://malformed.jsontest.com/</a></p>
+
+<h3>
+<a></a> MD5</h3>
+
+<p>Returns the MD5 hash code of a given string. To use, call <a href="http://md5.jsontest.com/?text=example_text">http://md5.jsontest.com/?text=example_text</a>, where <strong>example_text</strong> is the text that you want the MD5 hash for. For example, the above request would return:</p>
+
+<div class="highlight"><pre><span class="p">{</span>
+   <span class="nt">"md5"</span><span class="p">:</span> <span class="s2">"fa4c6baa0812e5b5c80ed8885e55a8a6"</span><span class="p">,</span>
+   <span class="nt">"original"</span><span class="p">:</span> <span class="s2">"example_text"</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>Endpoint: <a href="http://md5.jsontest.com/?text=%5Btext">http://md5.jsontest.com/?text=[text</a> to MD5]</p>
 
 <h2>
 <a></a> Optional Parameters</h2>
