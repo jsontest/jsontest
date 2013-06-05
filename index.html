@@ -42,7 +42,6 @@
 <li><a href="#validate">Validate</a></li>
 <li><a href="#code">Arbitrary JS Code</a></li>
 <li><a href="#cookie">Cookie</a></li>
-<li><a href="#malformed">Malformed JSON</a></li>
 <li><a href="#md5">MD5</a></li>
 </ol><p>Parameters</p>
 
@@ -50,10 +49,11 @@
 <li><a href="#callback">Callback</a></li>
 <li><a href="#alloworigin">Allow Origin</a></li>
 <li><a href="#mime">MIME</a></li>
-</ol><h2>Services</h2>
+</ol><h2>
+<a name="services" class="anchor" href="#services"><span class="octicon octicon-link"></span></a>Services</h2>
 
 <h3>
-<a name="ip"></a> IP Address</h3>
+<a name="-ip-address" class="anchor" href="#-ip-address"><span class="octicon octicon-link"></span></a><a name="ip"></a> IP Address</h3>
 
 <p>Calling <a href="http://ip.jsontest.com/">http://ip.jsontest.com/</a> will return your IP address in JSON form. Example:</p>
 
@@ -63,7 +63,7 @@
 <p>Endpoint: <a href="http://ip.jsontest.com/">http://ip.jsontest.com/</a></p>
 
 <h3>
-<a name="headers"></a> Headers</h3>
+<a name="-headers" class="anchor" href="#-headers"><span class="octicon octicon-link"></span></a><a name="headers"></a> Headers</h3>
 
 <p>Returns the HTTP request headers received from the client.</p>
 
@@ -78,7 +78,7 @@
 <p>Endpoint: <a href="http://headers.jsontest.com/">http://headers.jsontest.com/</a></p>
 
 <h3>
-<a name="date"></a> Date &amp; Time</h3>
+<a name="-date--time" class="anchor" href="#-date--time"><span class="octicon octicon-link"></span></a><a name="date"></a> Date &amp; Time</h3>
 
 <p>Returns a JSON object with the current date and time in human-readable form, and the current number of milliseconds since UNIX epoch (this is equivalent to the Javascript call <code>(new Date()).getTime()</code> ).</p>
 
@@ -94,7 +94,7 @@
 <p>Endpoint: <a href="http://date.jsontest.com">http://date.jsontest.com</a> (or <a href="http://time.jsontest.com">http://time.jsontest.com</a> )</p>
 
 <h3>
-<a name="echo"></a> Echo JSON</h3>
+<a name="-echo-json" class="anchor" href="#-echo-json"><span class="octicon octicon-link"></span></a><a name="echo"></a> Echo JSON</h3>
 
 <p>Returns a customized JSON object that you can define through a REST-style URL. For example, calling <a href="http://echo.jsontest.com/key/value/one/two">http://echo.jsontest.com/key/value/one/two</a> will return the following JSON:</p>
 
@@ -107,7 +107,7 @@
 <p>Endpoint: <a href="http://echo.jsontest.com/insert-key-here/insert-value-here/key/value">http://echo.jsontest.com/insert-key-here/insert-value-here/key/value</a></p>
 
 <h3>
-<a name="validate"></a> Validation</h3>
+<a name="-validation" class="anchor" href="#-validation"><span class="octicon octicon-link"></span></a><a name="validate"></a> Validation</h3>
 
 <p>Validates a given JSON object against the org.json reference parser. To use, tack a JSON string to a <strong>json</strong> parameter, as in: <a href="http://validate.jsontest.com/?json=%7B%22key%22:%22value%22%7D">http://validate.jsontest.com/?json={"key":"value"}</a>; this returns the following JSON:</p>
 
@@ -148,25 +148,19 @@
 <p>Endpoint: <a href="http://validate.jsontest.com/?json=%5BJSON-code-to-validate%5D">http://validate.jsontest.com/?json=[JSON-code-to-validate]</a></p>
 
 <h3>
-<a name="code"></a> Arbitrary JS Code</h3>
+<a name="-arbitrary-js-code" class="anchor" href="#-arbitrary-js-code"><span class="octicon octicon-link"></span></a><a name="code"></a> Arbitrary JS Code</h3>
 
 <p>JSONP is not just JSON; it is a JSON object wrapped inside a Javascript function call. However, JSONP is not just limited to function calls; you may embed any Javascript code needed.</p>
 
 <p>This service sends back JS code to create two alerts(), one that shows your IP address, and one that shows the current time in milliseconds. An example is below:</p>
 
-<div class="highlight"><pre><span class="nx">Arbitrary</span> <span class="nx">JS</span> <span class="nx">code</span> <span class="nx">here</span>
-</pre></div>
-
-<p>If you specify a callback string, it will be included in a third alert prompt.</p>
-
-<div class="highlight"><pre><span class="nx">Arbitrary</span> <span class="nx">JS</span> <span class="nx">code</span> <span class="nx">here</span>
-<span class="nx">JSONP</span> <span class="kd">function</span> <span class="nx">call</span> <span class="p">(</span><span class="nx">at</span> <span class="nx">end</span><span class="p">)</span> <span class="kd">with</span> <span class="nx">ip</span> <span class="nx">and</span> <span class="nx">user</span> <span class="nx">agent</span> <span class="nx">info</span><span class="p">.</span>
+<div class="highlight"><pre><span class="nx">alert</span><span class="p">(</span><span class="s2">"Your IP address is: 76.29.100.42"</span><span class="p">);</span>
 </pre></div>
 
 <p>Endpoint: <a href="http://code.jsontest.com">http://code.jsontest.com</a></p>
 
 <h3>
-<a name="cookie"></a> Cookie</h3>
+<a name="-cookie" class="anchor" href="#-cookie"><span class="octicon octicon-link"></span></a><a name="cookie"></a> Cookie</h3>
 
 <p>Sets a cookie with a name of <strong>jsontestdotcom</strong>, containing a value of the current time in milliseconds. The server will then return the following JSON:</p>
 
@@ -176,17 +170,7 @@
 <p>Endpoint: <a href="http://cookie.jsontest.com/">http://cookie.jsontest.com/</a></p>
 
 <h3>
-<a name="malformed"></a> Malformed JSON</h3>
-
-<p>Returns damaged/malformed JSON to the client. The returned JSON object will display your client IP address, but will be missing the final <strong>}</strong> brace - making it invalid JSON.</p>
-
-<div class="highlight"><pre><span class="err">example</span> <span class="err">of</span> <span class="err">malformed</span> <span class="err">JSON</span>
-</pre></div>
-
-<p>Endpoint: <a href="http://malformed.jsontest.com/">http://malformed.jsontest.com/</a></p>
-
-<h3>
-<a name="md5"></a> MD5</h3>
+<a name="-md5" class="anchor" href="#-md5"><span class="octicon octicon-link"></span></a><a name="md5"></a> MD5</h3>
 
 <p>Returns the MD5 hash code of a given string. To use, call <a href="http://md5.jsontest.com/?text=example_text">http://md5.jsontest.com/?text=example_text</a>, where <strong>example_text</strong> is the text that you want the MD5 hash for. For example, the above request would return:</p>
 
@@ -199,12 +183,12 @@
 <p>Endpoint: <a href="http://md5.jsontest.com/?text=%5Btext">http://md5.jsontest.com/?text=[text</a> to MD5]</p>
 
 <h2>
-<a name="parameters"></a> Optional Parameters</h2>
+<a name="-optional-parameters" class="anchor" href="#-optional-parameters"><span class="octicon octicon-link"></span></a><a name="parameters"></a> Optional Parameters</h2>
 
 <p>The parameters below work on all of the above services. </p>
 
 <h3>
-<a name="callback"></a> Callbacks</h3>
+<a name="-callbacks" class="anchor" href="#-callbacks"><span class="octicon octicon-link"></span></a><a name="callback"></a> Callbacks</h3>
 
 <p>For JSONP applications to work, they need to be able to specify a callback parameter. You can specify a callback parameter by appending <strong>?callback=[function_name]</strong>, where <strong>[function_name]</strong> represents the Javascript function name to send the JSON object to.</p>
 
@@ -214,7 +198,7 @@
 </pre></div>
 
 <h3>
-<a name="alloworigin"></a> Access-Control-Allow-Origin Header</h3>
+<a name="-access-control-allow-origin-header" class="anchor" href="#-access-control-allow-origin-header"><span class="octicon octicon-link"></span></a><a name="alloworigin"></a> Access-Control-Allow-Origin Header</h3>
 
 <p>Most web applications run in a sandbox, preventing them from accessing content from different web sites. Servers that host content and APIs available to external applications must specify which apps are allowed by setting the Access-Control-Allow-Origin header. </p>
 
@@ -223,7 +207,7 @@
 <p>More information can be found at <a href="http://www.w3.org/TR/cors/">W3C Cross-Origin Resource Sharing</a> and <a href="https://developer.mozilla.org/en-US/docs/HTTP_access_control">Mozilla: HTTP Access Control</a>.</p>
 
 <h3>
-<a name="mime"></a> MIME Type</h3>
+<a name="-mime-type" class="anchor" href="#-mime-type"><span class="octicon octicon-link"></span></a><a name="mime"></a> MIME Type</h3>
 
 <p>JSONTest.com follows IETF and IANA recommendations for the MIME type of JSON content: JSON content is set to "application/json" and JSONP content is declared as "application/javascript". See <a href="http://www.iana.org/assignments/media-types/application/index.html">IANA Media Types</a>, <a href="http://www.ietf.org/rfc/rfc4627.txt">IETF RFC 4627 (JSON Specification)</a>, and <a href="http://www.rfc-editor.org/rfc/rfc4329.txt">IETF RFC 4329 (Scripting Media Types)</a> for further documentation.</p>
 
@@ -237,7 +221,8 @@
 <li>text/plain</li>
 </ol><p>For instance, calling <a href="http://ip.jsontest.com/?mime=5">http://ip.jsontest.com/?mime=5</a> would return your IP address within a JSON object with a MIME type of text/plain.</p>
 
-<h3>Services</h3>
+<h3>
+<a name="services-1" class="anchor" href="#services-1"><span class="octicon octicon-link"></span></a>Services</h3>
 
 <p>It is recommended that you use the <strong>servicename</strong>.jsontest.com URL syntax while accessing JSONTest.com services. However, if you wish to specify the service required using a parameter, you may do so. Simply append `?service=**[servicename]** to any JSONTest endpoint. For instance, calling <a href="http://date.jsontest.com/?service=ip">http://date.jsontest.com/?service=ip</a> will return your IP address.</p>
       </section>
