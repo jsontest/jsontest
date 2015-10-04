@@ -32,3 +32,6 @@ Calling http://localhost:3000/md5?text=TEXT will return the MD5 sum of the TEXT 
 Access-Control-Allow-Origin is configured for '*'.
 MIME type is configured as 'application/json'.
 Callbacks are not implemented.
+
+## License
+Licensed under the MIT license.
