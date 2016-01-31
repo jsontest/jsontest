@@ -1,0 +1,10 @@
+/ip,200,ip
+/headers,200,jmeter-test-script
+/failure,404,
+/date,200,milliseconds_since_epoch
+/echo,200,not defined
+/validate,200,not defined
+/jscode,404,
+/cookie,200,time
+/md5/TEST,200,033bd94b1168d7e4f0d644c3c95e35bf
+/md5/TEST1,200,db03fa33c1e2ca35794adbb14aebb153

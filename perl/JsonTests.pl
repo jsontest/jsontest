@@ -107,3 +107,10 @@ To learn more, you can browse through the documentation
   <head><title><%= title %></title></head>
   <body><%= content %></body>
 </html>
+
+@@ not_found.html.ep
+<!DOCTYPE html>
+<html>
+  <head><title>Page not found</title></head>
+  <body>Page not found <%= $status %></body>
+</html>
