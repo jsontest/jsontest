@@ -15,6 +15,8 @@ import com.google.appengine.api.urlfetch.HTTPResponse;
 import com.google.appengine.api.urlfetch.URLFetchServiceFactory;
 
 @SuppressWarnings("serial")
+@Deprecated
+//Add deprecated warning as AsyncDatastore is being replaced by the Firestore.
 public class BackendServlet extends HttpServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
